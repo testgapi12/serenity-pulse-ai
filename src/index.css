@@ -2,39 +2,59 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
+/* Serenity Pulse Design System - Calm, mindful wellness colors
+All colors MUST be HSL for proper theming.
 */
 
 @layer base {
   :root {
+    /* Core background and text */
     --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --foreground: 215 25% 27%;
 
+    /* Card surfaces */
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 215 25% 27%;
 
+    /* Popover surfaces */
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 215 25% 27%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Primary - Calming sage green */
+    --primary: 145 25% 45%;
+    --primary-foreground: 0 0% 100%;
+    --primary-soft: 145 35% 85%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Secondary - Soft lavender */
+    --secondary: 250 15% 91%;
+    --secondary-foreground: 215 25% 27%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    /* Muted tones */
+    --muted: 210 20% 96%;
+    --muted-foreground: 215 15% 55%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    /* Accent - Warm peach */
+    --accent: 25 75% 85%;
+    --accent-foreground: 215 25% 27%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    /* Wellness colors */
+    --wellness-blue: 210 50% 70%;
+    --wellness-green: 145 25% 45%;
+    --wellness-peach: 25 75% 75%;
+    --wellness-lavender: 250 30% 80%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    /* Stress levels */
+    --stress-low: 145 50% 55%;
+    --stress-medium: 45 90% 60%;
+    --stress-high: 15 85% 60%;
+
+    /* System colors */
+    --destructive: 15 85% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 215 15% 88%;
+    --input: 215 15% 88%;
+    --ring: 145 25% 45%;
 
     --radius: 0.5rem;
 
@@ -56,33 +76,44 @@ All colors MUST be HSL.
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    /* Dark mode - Calming night theme */
+    --background: 215 30% 8%;
+    --foreground: 210 15% 90%;
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --card: 215 25% 12%;
+    --card-foreground: 210 15% 90%;
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 215 25% 12%;
+    --popover-foreground: 210 15% 90%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary: 145 30% 55%;
+    --primary-foreground: 0 0% 100%;
+    --primary-soft: 145 20% 25%;
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 215 20% 20%;
+    --secondary-foreground: 210 15% 90%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: 215 20% 15%;
+    --muted-foreground: 215 10% 65%;
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 25 60% 60%;
+    --accent-foreground: 215 30% 8%;
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    --wellness-blue: 210 40% 60%;
+    --wellness-green: 145 30% 55%;
+    --wellness-peach: 25 60% 60%;
+    --wellness-lavender: 250 25% 65%;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
+    --stress-low: 145 40% 50%;
+    --stress-medium: 45 80% 55%;
+    --stress-high: 15 75% 55%;
+
+    --destructive: 15 75% 55%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 215 20% 20%;
+    --input: 215 20% 20%;
+    --ring: 145 30% 55%;
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
@@ -100,6 +131,55 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   }
+
+  /* Wellness-specific utilities */
+  .breathing-animation {
+    animation: breathe 4s ease-in-out infinite;
+  }
+
+  .mood-card {
+    @apply bg-card border border-border rounded-2xl p-6 shadow-sm hover:shadow-md transition-all duration-300;
+  }
+
+  .wellness-gradient {
+    background: linear-gradient(135deg, hsl(var(--wellness-blue) / 0.1), hsl(var(--wellness-green) / 0.1));
+  }
+
+  .stress-gradient-low {
+    background: linear-gradient(90deg, hsl(var(--stress-low)), hsl(var(--wellness-green)));
+  }
+
+  .stress-gradient-medium {
+    background: linear-gradient(90deg, hsl(var(--stress-medium)), hsl(var(--wellness-peach)));
+  }
+
+  .stress-gradient-high {
+    background: linear-gradient(90deg, hsl(var(--stress-high)), hsl(var(--destructive)));
+  }
+}
+
+@keyframes breathe {
+  0%, 100% { transform: scale(1); opacity: 0.8; }
+  50% { transform: scale(1.1); opacity: 1; }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.6s ease-out;
+}
+
+.animate-slide-up {
+  animation: slideUp 0.5s ease-out;
 }
