@@ -8,7 +8,7 @@ import { supabase } from '@/integrations/supabase/client';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, AreaChart, Area } from 'recharts';
 import { format, subDays, startOfDay, endOfDay } from 'date-fns';
 import { Calendar as CalendarIcon, TrendingUp, Brain, Activity, Target, BookOpen, Heart, Zap } from 'lucide-react';
-import Navigation from '@/components/Navigation';
+
 import DailyTaskTracker from '@/components/DailyTaskTracker';
 import { MoodSelector } from '@/components/MoodSelector';
 import { StressTracker } from '@/components/StressTracker';
@@ -125,7 +125,6 @@ export default function Dashboard() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-primary-soft via-background to-secondary-soft">
-      <Navigation />
       
       <div className="container mx-auto py-8 px-4 max-w-6xl space-y-8">
         {/* Welcome Header */}
