@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { MoodSelector } from "@/components/MoodSelector";
 import { StressTracker } from "@/components/StressTracker";
-import { BreathingTimer } from "@/components/BreathingTimer";
+import BreathingTimer from "@/components/BreathingTimer";
 import { JournalEntry } from "@/components/JournalEntry";
 import { WellnessSuggestions } from "@/components/WellnessSuggestions";
 import { Heart, Brain, Calendar, BarChart3 } from "lucide-react";

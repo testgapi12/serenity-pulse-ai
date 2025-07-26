@@ -25,11 +25,7 @@ const App = () => (
           <div className="min-h-screen bg-background">
             <Navigation />
             <Routes>
-              <Route path="/auth" element={
-                <ProtectedRoute requireAuth={false}>
-                  <Auth />
-                </ProtectedRoute>
-              } />
+              <Route path="/auth" element={<Auth />} />
               <Route path="/onboarding" element={
                 <ProtectedRoute>
                   <Onboarding />
