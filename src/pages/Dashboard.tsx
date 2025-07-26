@@ -82,7 +82,16 @@ export default function Dashboard() {
       {/* Header */}
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
         <div>
-          <h1 className="text-3xl font-bold text-primary">Your Wellness Journey</h1>
+          <h1 className="text-3xl font-bold text-primary">Welcome Back! 🌟</h1>
+          <p className="text-muted-foreground mt-1">
+            {new Date().toLocaleDateString('en-US', { 
+              weekday: 'long', 
+              year: 'numeric', 
+              month: 'long', 
+              day: 'numeric' 
+            })}
+          </p>
+          <p className="text-sm text-muted-foreground">Your Wellness Journey</p>
           <p className="text-muted-foreground">Track your progress and insights over time</p>
         </div>
         <Select value={timeFilter} onValueChange={setTimeFilter}>
